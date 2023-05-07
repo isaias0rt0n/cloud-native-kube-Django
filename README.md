@@ -9,7 +9,7 @@ Para fazer o deploy desse projeto com Docker
 
 #### Clonando repositório
 ```bash
-https://github.com/isaias0rt0n/cloud-native-kube-Django.git
+git clone https://github.com/isaias0rt0n/cloud-native-kube-Django.git
 ```
 
 #### Entrando na pasta
