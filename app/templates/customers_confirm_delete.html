@@ -1,0 +1,85 @@
+<!doctype html>
+{% load bootstrap4 %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delete Customer</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    <style>
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #007bff;
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    body {
+      background-color: #f8f9fa;
+    }
+
+    table {
+      background-color: #fff;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 100%;
+      font-size: 0.9rem;
+    }
+
+    th {
+      text-transform: uppercase;
+      font-weight: 600;
+      background-color: #007bff;
+      color: #fff;
+      padding: 0.75rem;
+      text-align: left;
+      vertical-align: middle;
+      border: none;
+    }
+
+    td {
+      border-top: 1px solid #dee2e6;
+      padding: 0.75rem;
+      vertical-align: middle;
+    }
+
+    .fa {
+      margin-right: 0.5rem;
+    }
+    </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="mb-4">{{ customer.name }}</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"><i class="fas fa-user"></i> Name</th>
+            <th scope="col"><i class="fas fa-envelope"></i> Email</th>
+            <th scope="col"><i class="fas fa-birthday-cake"></i> Date of birth</th>
+            <th scope="col"><i class="fas fa-briefcase"></i> Job</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.email }}</td>
+              <td>{{ customer.date_birth }}</td>
+              <td>{{ customer.job }}</td>
+            </tr>
+        </tbody>
+      </table>
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+    </div>
+  </div>
+</body>
+</html>
