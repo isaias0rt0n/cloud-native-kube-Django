@@ -8,7 +8,7 @@ class CustomerCreateView(CreateView):
     model = Customers
     fields = '__all__'
     template_name = 'customer_form.html'
-    success_url = 'customers_list'
+    success_url = 'customers'
 
 
 # Method List
